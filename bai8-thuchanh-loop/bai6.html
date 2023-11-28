@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- Bài 6: Viết chương trình nhập vào số nguyên kiểm tra xem đó có phải số hoàn hảo hay không?
+Số hoàn hảo là số có tổng các ước nhỏ hơn nó bằng chính nó
+VD:
+ input:6 
+ output : “là số hoàn hảo”
+Vì 6 có các ước số nhỏ hơn nó là 1,2,3
+Tổng các ước này = 6.
+ -->
+
+    <script>
+        let number = +prompt("Hãy nhập vào một số nguyên để kiểm tra");
+        let sum = 0;
+        for (let i = 1; i <=number; ++i) {
+            if (number%i==0&&i<number) {
+                sum += i;
+            } 
+        }
+        console.log(sum);
+        if (sum==number) {
+            document.write("la so hoan hao");
+        } else {
+            document.write("khong phai la so hoan hao");
+        }
+
+    </script>
+    
+</body>
+
+</html>

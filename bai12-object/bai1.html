@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- Cho mảng sau: let stores = [{ id: 1, name: "Milk", count: 100}, {id: 2, name: "Yakult", count: 100},{id: 3, name: "Butter", count: 100,}];
+let carts=[];
+•	Cho người dùng nhập vào 5 chữ cái C/R/U/D/E
+•	C – Cho người dùng nhập vào tên sản phẩm muốn mua. Nếu có thêm chúng vào carts khi đó count trong stores của sản phẩn đó giảm đi 1
+•	R – In ra toàn bộ các sản phẩm trong stores và carts
+•	U – Hỏi người dùng vị trí update trong carts. Nếu tồn tại cho người dùng nhập vào số lượng muốn thay đổi và khi đó count trong stores cũng cập nhật theo. Update xong in lại stores và carts
+•	D – Hỏi người dùng vị trị của sản phẩm muốn xóa trong carts. Tiến hành xóa và in ra lại
+•	E – Biến chương trình thành vòng lặp vĩnh cứu và khi người dùng nhập vào E thì sẽ thoát khỏi chương trình và thông báo “Cảm ơn bạn đã đến với Rikkei Stores”
+ -->
+    <script>
+        let stores = [
+            {
+                id: 1,
+                name: "Milk",
+                count: 100
+            },
+            {
+                id: 2,
+                name: "Yakult",
+                count: 100
+            },
+            {
+                id: 3,
+                name: "Butter",
+                count: 100
+            }
+        ];
+        let carts = [];
+        do {
+            userInput = prompt("nhap vao 5 chu cai C R U D E")
+            if (userInput == "C") {
+                let check = false;
+                let productName = prompt("nhap ten san pham");
+                for (let i = 0; i < stores.length; i++) {
+                    if (stores[i].name == productName) {
+                        let product = {
+                            id: stores[i].id,
+                            name: stores[i].name,
+                            count: 1
+                        }
+                        for (let i = 0; i < carts.length; i++) {
+                            if (carts[i].name == productName) {
+                                carts[i].count += 1;
+                                check = true
+                            };
+                        }
+                        if (check == false) {
+                            carts.push(product);
+                        }
+                        stores[i].count -= 1;
+                    };
+                }
+                console.log(stores);
+                console.log(carts);
+
+            }
+            if (userInput == "R") {
+                for (let i = 0; i < stores.length; i++) {
+                    console.log(stores[i]);
+                }
+                for (let i = 0; i < carts.length; i++) {
+                    console.log(carts[i]);
+                }
+            }
+            if (userInput == "U") {
+                let index = +prompt("nhap vi tri trong carts");
+                if (carts[index] != undefined) {
+                    let newCount = +prompt("nhap vao so luong");
+                    if (newCount >= 0 && newCount <= 100) {
+                        carts[index].count = newCount;
+                        for (let i = 0; i < stores.length; i++) {
+                            if (stores[i].name == carts[index].name) {
+                                stores[i].count = 100 - newCount;
+                            }
+                        }
+                        if (newCount == 0) {
+                            carts.splice(index, 1);
+                        }
+                    }
+
+                }
+            }
+            if (userInput == "D") {
+                let productDelete = prompt("nhap vi tri muon xoa ");
+                if (carts[productDelete] != undefined) {
+                    for (let i = 0; i < stores.length; i++) {
+                        if (stores[i].name == carts[productDelete].name) {
+                            stores[i].count = 100;
+                        }
+                    }
+                    carts.splice(productDelete, 1);
+                }
+            }
+
+
+        } while (userInput != "E");
+        alert("Cảm ơn bạn đã đến với Rikkei Stores");
+    </script>
+</body>
+
+</html>

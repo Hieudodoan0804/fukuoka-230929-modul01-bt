@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- Bài 2: Viết chương trình nhập vào một câu bất kì, in ra câu đảo ngược của nó. Ví dụ: “Hello world” → “dlrow olleH” -->
+
+    <!-- bài này em chưa làm được -->
+    <script>
+        let myString = prompt("nhập vào một câu bất kỳ");
+        let length = myString.length;
+        let myStringreverse;
+        for (let i = 0; i < length; i++) {
+            myStringreverse += myString.charAt(length - 1 - i);
+        }
+        console.log(myStringreverse);
+        // console.log(myString.length);
+        // console.log(myString.charAt(1));
+    </script>
+</body>
+
+</html>

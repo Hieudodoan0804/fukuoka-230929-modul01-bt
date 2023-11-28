@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- Bài 4: Viết chương trình in ra 15 số đầu tiên trong dãy Fibonaci -->
+    <!-- Dãy Fibonacci là dãy vô hạn các số tự nhiên bắt đầu bằng 1 và 1, sau đó các số tiếp theo sẽ bằng tổng của 2 số liền trước nó. 
+      Cụ thể, các số đầu tiên của dãy Fibonacci là 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610 -->
+    <script>
+        let f1 = 1;
+        let f2 = 1;
+        let f15;
+        document.write(f1, "&nbsp");
+        document.write(f2, "&nbsp");
+        for (let i = 3; i <= 15; i++) {
+            f15 = f1 + f2;
+            f1 = f2;
+            f2 = f15;
+            document.write(f2, "&nbsp");
+
+        }
+    </script>
+</body>
+
+</html>

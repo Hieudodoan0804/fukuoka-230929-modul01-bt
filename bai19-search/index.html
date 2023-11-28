@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./fontawesome-free-6.4.2/css/all.min.css">
+</head>
+
+<body>
+    <section class="container">
+        <form action="">
+            <i class="fas fa-search"></i>
+            <input type="text" name="" id="search-item" placeholder="Search products" onkeyup="search()">
+        </form>
+        <div class="product-list">
+            <div class="product">
+                <img src="./img/images 2.jpeg" alt="">
+                <div class="item">
+                    <h2>Tshirt </h2>
+                    <h3>¥ 2990</h3>
+                </div>
+            </div>
+            <div class="product">
+                <img src="./img/images 3.jpeg" alt="">
+                <div class="item">
+                    <h2>Tshirt1 </h2>
+                    <h3>¥ 2990</h3>
+                </div>
+            </div>
+            <div class="product">
+                <img src="./img/images 3.jpeg" alt="">
+                <div class="item">
+                    <h2>Tshirt2 </h2>
+                    <h3>¥ 2990</h3>
+                </div>
+            </div>
+            <div class="product">
+                <img src="./img/images 3.jpeg" alt="">
+                <div class="item">
+                    <h2>Tshirt3 </h2>
+                    <h3>¥ 2990</h3>
+                </div>
+            </div>
+            <div class="product">
+                <img src="./img/images 3.jpeg" alt="">
+                <div class="item">
+                    <h2>Tshirt4 </h2>
+                    <h3>¥ 2990</h3>
+                </div>
+            </div>
+            <div class="product">
+                <img src="./img/images 3.jpeg" alt="">
+                <div class="item">
+                    <h2>Tshirt5 </h2>
+                    <h3>¥ 2990</h3>
+                </div>
+            </div>
+            <div class="product">
+                <img src="./img/images 3.jpeg" alt="">
+                <div class="item">
+                    <h2>Tshirt6 </h2>
+                    <h3>¥ 2990</h3>
+                </div>
+            </div>
+            <div class="product">
+                <img src="./img/images 3.jpeg" alt="">
+                <div class="item">
+                    <h2>Tshirt7 </h2>
+                    <h3>¥ 2990</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        function startSearch() {
+            
+        }
+
+
+        let search = function search(param1,param2) {
+            let searchbox = document.getElementById("search-item").value.toUpperCase();
+            let products = document.querySelectorAll(".product");
+            let name = document.getElementsByTagName("h2");
+
+
+            for (let i = 0; i < name.length; i++) {
+                let match = products[i].getElementsByTagName("h2")[0];
+                if (match) {
+                    let textValue = match.textContent || match.innerHTML
+                    if (textValue.toLowerCase().indexOf(searchbox) > -1) {
+                        products[i].style.display = "";
+                    } else {
+                        products[i].style.display = "none";
+                    }
+                }
+
+            }
+
+            let timeId;
+
+
+            if (timeId) {
+                clearTimeout(timeId)
+            }
+            timeId =setTimeout(()=>{
+                param1()
+            },param2)
+        }
+    </script>
+</body>
+
+</html>

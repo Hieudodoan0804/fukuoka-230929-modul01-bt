@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <div id="mainBlock" class="container">
+        <div id="infoBlock" class="container__block">
+            <div class="info">
+                <span id="flips"></span>
+                <!-- <img src="./image/pexels-pixabay-208984.jpeg" alt="">
+                <img src="./image/pexels-pixabay-326012.jpeg" alt="">
+                <img src="./image/pexels-pixabay-34231.jpeg" alt="">
+                <img src="./image/pexels-pixabay-50577.jpeg" alt="">
+                <img src="./image/pexels-pixabay-47547.jpeg" alt="">
+                <img src="./image/pexels-pixabay-86405.jpeg" alt=""> -->
+            </div>
+        </div>
+    </div>
+    <script>
+        var divblock, blockFrontImages, blocksArray, blockFrontImagesAll, shuffledBlocks;
+        function init() {
+            //initializing values
+            blocksArray = [];
+            blockFrontImagesAll = [];
+            shuffledBlocks = [];
+            blockFrontImages = ["./image/pexels-pixabay-208984.jpeg",
+                "./image/pexels-pixabay-326012.jpeg",
+                "./image/pexels-pixabay-34231.jpeg",
+                "./image/pexels-pixabay-50577.jpeg",
+                "./image/pexels-pixabay-47547.jpeg",
+                "./image/pexels-pixabay-86405.jpeg"];
+            // init();
+            blockFrontImagesAll = blockFrontImages.concat(blockFrontImages);
+            shuffledBlocks = shuffleBlocks(blockFrontImagesAll);
+        }
+        init();
+
+        function shuffleBlocks(blocksArray) {
+            var currentIndex = blocksArray.length, temporaryValue, randomIndex;
+            // While there remain elements to shuffle...
+            while (currentIndex !== 0) {
+                // Pick an element from the remaining lot...
+                randomIndex = Math.floor(Math.random() * currentIndex);
+                currentIndex -= 1;
+                // Swap it with the current element.
+                temporaryValue = blocksArray[currentIndex];
+                blocksArray[currentIndex] = blocksArray[randomIndex];
+                blocksArray[randomIndex] = temporaryValue;
+            }
+            return blocksArray;
+        }
+    </script>
+</body>
+
+</html>

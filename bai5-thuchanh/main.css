@@ -1,0 +1,70 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(./images_basic/hero-bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+
+.nav__page {
+    position: relative;
+    left: 130px;
+}
+
+.nav__list {
+    list-style: none;
+    display: flex;
+    position: relative;
+    left: 200px;
+}
+
+.nav__item {
+    margin: 0 10px;
+    position: relative;
+    left: 200px;
+}
+
+.nav__item1 {
+    margin: 0 10px;
+}
+
+.text {
+    color: white;
+}
+
+.style {
+    font-family: 'Zeyada', cursive;
+}
+.content_h2 {
+    font-size: 50px;
+}
+.nav__btn {
+    background-color: rgb(254, 190, 49);
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.material-symbols-outlined {
+    color: white;
+}
+
+.content {
+    position: relative;
+    top: 250px;
+    left: 250px;
+}
+
+.content__desc {
+    margin: 30px 0;
+    width: 500px;
+}

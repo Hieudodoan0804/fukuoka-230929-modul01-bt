@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 
+        Bài 9: Viết chương trình cho phép người dùng nhập điểm các môn:Toán,Lí,Hoá,
+Văn, Sử , Địa (thang điểm 10);
+Sau đó tính điểm trung bình các môn học
+Hiển thị kết quả học tập theo loại như sau:
+
+8.0 <=ĐTB<=10: xếp loại GIỎI.
+6.5<=ĐTB<=7.9: xếp loại KHÁ.
+5.0<=ĐTB<=6.4: xếp loại TRUNG BÌNH.
+ĐTB<5.0 : xếp loại YẾU.
+
+     -->
+    <script>
+        let maths = parseInt(prompt("Điểm môn toán"));
+        let physics = parseInt(prompt("Điểm môn ly"));
+        let chemistry = parseInt(prompt("Điểm môn hoá"));
+        let literature = parseInt(prompt("Điểm môn văn"));
+        let history = parseInt(prompt("Điểm môn sử"));
+        let geography = parseInt(prompt("Điểm môn địa"));
+        let ĐTB = (maths + physics + chemistry + literature + geography + history) / 6;
+        if (ĐTB.toFixed(1) >= 8.0 && ĐTB.toFixed(1) <= 10) {
+            console.log("xếp loại Giỏi");
+        } else if (ĐTB.toFixed(1) >= 6.5 && ĐTB.toFixed(1) <= 7.9) {
+            console.log("xếp loại Khá");
+        } else if (ĐTB.toFixed(1) >= 5.0 && ĐTB.toFixed(1) <= 6.4) {
+            console.log("xếp loại Trung Bình");
+        } else if (ĐTB.toFixed(1)<5.0) {
+            console.log("xếp loại Yếu");
+        }
+    </script>
+</body>
+
+</html>

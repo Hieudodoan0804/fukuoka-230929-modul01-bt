@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- Bài 1: Viết chương trình cho người dùng nhập vào 3 số, viết hàm kiểm tra để tìm ra số bé nhất và in ra số đó -->
+    <script>
+        function minNumbers(number1, number2, number3) {
+            let min = number1;
+            if (number2 < min) {
+                min = number2;
+            }
+            if (number3 < min) {
+                min = number3;
+            }
+            return min;
+        }
+        let min = minNumbers(number1 = +prompt("nhập số thứ 1"), number2 = +prompt("nhập số thứ 2"), number3 = +prompt("nhập số thứ 3"));
+        console.log("số bé nhất là " + min);
+    </script>
+</body>
+
+</html>

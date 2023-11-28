@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 600px;
+            height: 400px;
+            margin: 30px auto;
+        }
+
+        .container__main {
+            height: 300px;
+        }
+        .container__main img {
+            display: block;
+            width: 90%;
+            height: 90%;
+            object-fit: cover;
+            margin: 0 auto;
+
+        }
+
+        .container__cross {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 90px;
+        }
+        .container__cross--images{
+            display: flex;
+            height: 90px;
+            gap: 15px;
+        }
+        .container__cross--images img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 5px;
+            display: block;
+            border: 1px solid;
+            opacity: 0.4;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="container__main">
+            <img id="main" src="./img/pexels-anna-tukhfatullina-food-photographerstylist-2684556.jpeg" alt="">
+        </div>
+        <div class="container__cross">
+            <span class="material-symbols-outlined">
+                arrow_back_ios
+            </span>
+            <div class="container__cross--images">
+                <!-- <img src="./img/pexels-anna-tukhfatullina-food-photographerstylist-2684556.jpeg" alt="">
+                <img src="./img/pexels-anna-wlodarczyk-2451673.jpeg" alt="">
+                <img src="./img/pexels-ella-olsson-3026803.jpeg" alt="">
+                <img src="./img/pexels-karolina-grabowska-4040850.jpeg" alt="">
+                <img src="./img/pexels-lina-kivaka-5732158.jpeg" alt="">
+                <img src="./img/pexels-olena-bohovyk-3323686.jpeg" alt="">
+                <img src="./img/pexels-polina-tankilevitch-4109997.jpeg" alt="">
+                <img src="./img/pexels-polina-tankilevitch-4109998.jpeg" alt="">
+                <img src="./img/pexels-polina-tankilevitch-4110006.jpeg" alt="">
+                <img src="./img/pexels-polina-tankilevitch-4110012.jpeg" alt=""> -->
+            </div>
+            <span class="material-symbols-outlined">
+                arrow_forward_ios
+            </span>
+        </div>
+    </div>
+    <script>
+        let images =[
+                "./img/pexels-anna-tukhfatullina-food-photographerstylist-2684556.jpeg",
+                "./img/pexels-anna-wlodarczyk-2451673.jpeg",
+                "./img/pexels-ella-olsson-3026803.jpeg",
+                "./img/pexels-karolina-grabowska-4040850.jpeg",
+                "./img/pexels-lina-kivaka-5732158.jpeg",
+                "./img/pexels-olena-bohovyk-3323686.jpeg",
+                "./img/pexels-polina-tankilevitch-4109997.jpeg",
+                "./img/pexels-polina-tankilevitch-4109998.jpeg",
+                "./img/pexels-polina-tankilevitch-4110006.jpeg",
+                "./img/pexels-polina-tankilevitch-4110012.jpeg",
+
+        ]
+        function showImages() {
+            let text ="";
+            for (let i = 0; i < 6; i++) {
+                if (i>0) {
+                    text +=
+                `
+                <img onclick = chooseImage(${i}) class="opacity show" src="${images[i]}" alt="">
+                ` 
+                }else{
+                    text +=
+                `
+                <img onclick = chooseImage(${i}) class="show" src="${images[i]}" alt="">
+                `
+                } 
+            }
+            document.getElementsByClassName("container__cross--images")[0].innerHTML=text;
+        }
+        showImages();
+        // khai bao ham tang anh
+        function nextImages() {
+            let image = images.shift();
+            images.push(image);
+            document.getElementById("main").src=images[0];
+            showImages();
+        }
+        // function chon anh
+        function chooseImage(index) {
+            document.getElementById("main").src=images[index];
+            // lay het danh sach ra
+            let img= document.getElementsByClassName("show");
+            for (let i = 0; i < img.length; i++) {
+                if (index==i) {
+                   img[i].classList.remove("opacity") ;
+                }else{
+                    img[i].classList.add("opacity");
+                }
+                
+            }
+        }
+    </script>
+</body>
+
+</html>

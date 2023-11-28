@@ -1,0 +1,24 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    background-color: aqua;
+    height: 300px;
+    width: 400px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 5px;
+}
+.container__block{
+    background-color: brown;
+}
+.container__box--img{
+    height: 90px;
+    width: 90px;
+    border-radius: 5px;
+    object-fit: cover;
+}

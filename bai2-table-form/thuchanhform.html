@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>thuchanhform</title>
+</head>
+<body>
+    <h2>Create Account</h2>
+    <form action="https://www.w3schools.com/html/default.asp" method="post" enctype="multipart/form-data">
+        <fieldset>
+            <legend> Registration information </legend>
+            <label for="fname">First name*:</label>
+            <input type="text" id="fname" name="fname" placeholder="enter your firstname">
+            <label for="lname">Last name:</label>
+            <input type="text" id="lname" name="lname" placeholder="enter your lastname"><br>
+            <label for="Email">Email*:</label>
+            <input type="text" id="Email" name="Email" placeholder="enter your email">
+            <label for="Phone">Phone*:</label>
+            <input type="number" size="30" placeholder="enter your phone number"><br>
+            <label for="Password">Password*:</label>
+            <input type="password" id="Password" name="Password" placeholder="enter your password">
+            <label for="Confirm Password">Confirm Password*:</label>
+            <input type="password" id="Confirm Password" name="Confirm Password" size="25" placeholder="enter your password again">
+        </fieldset>
+        <fieldset>
+            <legend> Personal infomation</legend>
+            <label for="Gender"> Gender:</label>
+            <input type="radio"> Male
+            <input type="radio"> Female
+            <label for="Hobbies"> Hobbies:</label>
+            <input type="checkbox"> Music
+            <input type="checkbox"> Sports
+            <input type="checkbox"> Travel
+            <input type="checkbox"> Movies <br>
+            <label for="Source of Income"> Source of Income:</label>
+            <select name="" id="">
+                <option value="Emplpyed"> Employed</option>
+            </select>
+            <label for="Income"> Income:</label>
+            <input type="range"><br>
+            <label for="Age"> Age:</label>
+            <input type="number" value="18">
+            <label for="Prpfile Picture"> Profile Picture:</label>
+            <input type="file">
+
+        </fieldset>
+        <input type="submit" value="creat">
+        <input type="reset" value="reset"> 
+
+      </form> 
+</body>
+</html>

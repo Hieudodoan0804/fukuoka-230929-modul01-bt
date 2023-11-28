@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 
+        Bài 10: Viết chương trình nhập vào số tháng trong năm,in ra số ngày trong tháng đó.
+Ví dụ : Người dùng nhập vào số 7 thì in ra tháng 7 có 31 ngày.
+
+     -->
+    <script>
+        let month = +prompt("Mời bạn nhập vào số tháng cần kiểm tra");
+        let year = +prompt("Mời bạn nhập vào số năm cần kiểm tra");
+        switch (month) {
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+                console.log("Năm " + year + " Tháng " + month + " có 31 ngày");
+                break;
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                console.log("Năm " + year + " Tháng " + month + " có 30 ngày");
+                break;
+            case 2:
+                if (year % 4 == 0) {
+                    console.log("Năm " + year + " Tháng " + month + " có 29 ngày");
+                } else {
+                    console.log("Năm " + year + " Tháng " + month + " có 28 ngày");
+                }
+                break;
+            default:
+                console.log("Điều kiện không thoả mãn");
+                break;
+        }
+    </script>
+</body>
+
+</html>

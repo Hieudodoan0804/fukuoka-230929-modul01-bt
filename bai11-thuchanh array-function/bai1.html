@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Bài1: Viết chương trình nhập vào số tự nhiên N  in ra ,N số nguyên tố; -->
+       <script>
+        function isPrime(number) {
+            if (number < 2) return false;
+            for (let i = 2; i <= Math.sqrt(number); i++) {
+                if (number % i === 0) return false;
+            }
+            return true;
+        }
+
+        function printPrimes(n) {
+            let count = 0;
+            let currentNumber = 2;
+
+            while (count < n) {
+                if (isPrime(currentNumber)) {
+                    console.log(currentNumber);
+                    count++;
+                }
+                currentNumber++;
+            }
+        }
+
+        const n = parseInt(prompt("Nhập vào số n:"));
+        printPrimes(n);
+       </script>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 
+        [Bài Tập 3] Bài tập 
+
+Mục tiêu: Sử dụng được hàm prompt để lấy giá trị người dùng nhập vào sau đó áp dụng toán tử để tính toán giá trị.
+
+Bài 3.1: Viết chương trình tính chu vi và diện tích hình chữ nhật.
+
+Bài 3.2: Viết chương trình tính chu vi và diện tích hình tròn.
+
+     -->
+    <!-- <script src="./main.js"></script> -->
+    <script>
+        // bai3.1
+        var x = parseInt(prompt("chiều dài hình chữ nhật"));
+        var y = parseInt(prompt("chiều rộng hình chữ nhật"));
+        var p = (x + y) * 2;
+        var s = x * y;
+        console.log("chu vi hình chữ nhật là :", p);
+        console.log("diện tích hình chữ nhật là :", s);
+        // bai3.2
+        const pi = 3.14;
+        var r = parseInt(prompt("bán kính hình tròn"));
+        var c = r * 2 * pi;
+        var s = r * r * pi;
+        console.log("chu vi hình tròn la :", c);
+        console.log("diện tích hình tròn là :", s);
+    </script>
+</body>
+
+</html>

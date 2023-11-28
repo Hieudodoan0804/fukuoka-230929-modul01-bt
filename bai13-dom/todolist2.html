@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input id="job" type="text"> <button id="save" onclick="addTodo()">Add</button>
+    <ul id="showJobs">
+
+    </ul>
+    <script>
+        // khai bao mang chua danh sach cong viec lay gia tri o input nguoi dung nhap vao
+        // sinh id rieng cho moi cong viec
+        let checkEdit = "";
+        function uuid() {
+            // Math.random sinh ngau nhien 1 so tu 0 den nho hon 1
+            return Math.floor(Math.random() * 863849832) + new Date().getMilliseconds();
+        }
+        let todos = [];
+        // tao function de add todo
+        function addTodo() {
+            let inputValue = document.getElementById("job").value;
+            if (inputValue != "") {
+                // tao doi tuong co thuoc tinh name va id
+                let obj = {
+                    name: inputValue,
+                    id: uuid(),
+                }
+                if (checkEdit != "") {
+                    // chung to nguoi dung muon sua chu k phai then
+                    for (let i = 0; i < todos.length; i++) {
+                        if (todos[i].id == checkEdit) {
+                            todos.splice(i, 1, { ...obj, id: checkEdit });
+                            checkEdit = "";
+                            document.getElementById("save").innerText = "Add";
+                            document.getElementById("job").value = "";
+                            showJobs();
+                            return;
+                        }
+                    }
+
+                }
+                todos.push(obj);
+                document.getElementById("job").value = "";
+            }
+            showJobs();
+        }
+        // function hien thi danh sach cong viec 
+        function showJobs() {
+            let text = "";
+            for (let i = 0; i < todos.length; i++) {
+                text +=
+                    `
+                    <li>
+                        ${todos[i].name}
+                        <button onclick=editJob(${todos[i].id})> sửa </button>
+                        <button onclick=deleteJob(${todos[i].id})> xoá </button>
+                    </li>
+
+                `
+            }
+            document.getElementById("showJobs").innerHTML = text;
+        }
+        // tao function xoa cong viec
+        function deleteJob(id) {
+            // tim id do nam dau trong listtodo
+            let deleteConfirm = confirm("ban co muon xoa khong");
+            if (deleteConfirm) {
+                for (let i = 0; i < todos.length; i++) {
+                    if (todos[i].id == id) {
+                        todos.splice(i, 1);
+                        showJobs();
+                    }
+
+                }
+            }
+        }
+        // function sua cong viec
+        function editJob(id) {
+            // lay id cua cong viec can sua
+            checkEdit = id;
+            document.getElementById("save").innerText = "Edit";
+            for (let i = 0; i < todos.length; i++) {
+                if (todos[i].id == id) {
+                    document.getElementById("job").value = todos[i].name;
+                    break;
+
+                }
+
+            }
+        }
+
+    </script>
+</body>
+
+</html>

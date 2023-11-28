@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 
+        Bài 5: Viết chương trình cho phép người dùng nhập vào 1 số.
+Kiểm tra xem số nhập vào là số chẵn hay số lẻ (sử dụng switch case).
+
+     -->
+    <script>
+        var number = +prompt("Bạn hãy nhập vào một số bất kì");
+        var a = number%2;
+        switch (a) {
+            case 0:
+                alert("Đây là số chẵn");
+                break;
+            case 1:
+                alert("Đây là số lẻ");
+                break;
+            default:
+                break;
+        }
+    </script>
+</body>
+
+</html>
